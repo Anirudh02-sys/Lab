@@ -29,11 +29,18 @@ def adminPage(request):
     
     
 
+
 def audPage(request):
-    context={'roles':roles}
+    get_files = UploadFile.objects.all()
+    context={'files':get_files}
     return render(request,'audPage.html',context)
 
 def subPage(request):
+    if request.method == "POST":
+        filename = request.POST.get('filename')
+        files = request.FILES.get('upload')
+        new_file = UploadFile.objects.create(f_name = filename,f_file=files)
+        new_file.save()
     context={'roles':roles}
     return render(request,'subPage.html',context)
 

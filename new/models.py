@@ -12,3 +12,8 @@ class Act(models.Model):
     def __str__(self):
         return f"{self.act_name}"
 
+class UploadFile(models.Model):
+    f_name = models.CharField(max_length=255)
+    f_file = models.FileField(upload_to="")
+    def __str__(self):
+        return self.f_name

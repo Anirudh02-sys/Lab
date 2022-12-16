@@ -4,3 +4,4 @@ from .models import *
 
 
 admin.site.register(Act)
+admin.site.register(UploadFile)

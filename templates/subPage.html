@@ -1,4 +1,14 @@
 {% extends 'dashboard.html' %}
 {% block body %}
 <h1>Subcontractor</h1>
+<form method="post" action="subPage" enctype="multipart/form-data">
+    {% csrf_token %}
+<div>
+    <label>Enter file name</label>
+    <input type="text" name="filename">
+    <br>
+    <input type="file" name="upload">
+    <button type="submit">Upload</button>
+</div>
+</form>
 {% endblock %}

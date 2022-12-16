@@ -1,4 +1,26 @@
 {% extends 'dashboard.html' %}
 {% block body %}
 <h1>Auditor</h1>
+<caption><b>Subcontractor Uploads</b></caption>  
+<div class="table-container">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Act Name</th>
+      <th scope="col">File</th>
+    </tr>
+  </thead>
+  <tbody >
+    {% for f in files %}
+    <tr>
+      <td>{{ f.id }}</td>
+      <td>{{ f.f_name }}</td>
+      <td><a href="{{ f.f_file.url }}" target="_blank">{{ f.f_file }}</td>
+    </tr>
+    {% endfor %} 
+  </tbody>
+</table> 
+</div>
+</div>
 {% endblock %}
